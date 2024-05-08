@@ -53,6 +53,12 @@ export default async function InvoicesTable({
                 </div>
               </div>
             ))}
+
+            {invoices?.length === 0 && (
+              <div className="w-full rounded-md bg-white p-4">
+                <p className="text-center">No invoices found</p>
+              </div>
+            )}
           </div>
           <table className="hidden min-w-full text-gray-900 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
@@ -115,6 +121,14 @@ export default async function InvoicesTable({
                   </td>
                 </tr>
               ))}
+
+              {invoices?.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="py-4 text-center">
+                    No invoices found
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
